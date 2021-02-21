@@ -1,20 +1,33 @@
 <template>
-  <Header first_link="www.google.fr" second_link="List.vue"/>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <router-link to="/liste">Voir la liste</router-link>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:limegreen">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Données</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link to="/" class="nav-link active" aria-current="page">Home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/liste" class="nav-link">Voir la liste</router-link>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <router-view />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Header from './components/Header.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
-    Header,
-  }
+  
 }
 </script>
 
