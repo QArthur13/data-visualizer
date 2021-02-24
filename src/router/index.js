@@ -13,6 +13,10 @@ const routes = [
         path: '/liste',
         name: 'List',
         component: List
+    },
+    {
+        path: '/change/:name',
+        name: 'Update'
     }
 ]
 

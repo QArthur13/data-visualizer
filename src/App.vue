@@ -8,10 +8,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link to="/" class="nav-link active" aria-current="page">Home</router-link>
+            <router-link v-bind:to="{ name: 'Home'}" class="nav-link active" aria-current="page">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/liste" class="nav-link">Voir la liste</router-link>
+            <router-link v-bind:to="{ name: 'List'}" class="nav-link">List</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
