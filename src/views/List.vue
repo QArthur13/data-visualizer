@@ -37,7 +37,7 @@
                 <td>{{user.preferences.favorite_fruit}}</td>
                 <td>{{user.preferences.favorite_color}}</td>
                 <td>{{user.preferences.favorite_movie}}</td>
-                <td><router-link class="btn btn-warning" type="button" v-bind:to="{ name: 'Update', params: { name: user.id }}">Modify</router-link></td>
+                <td><router-link class="btn btn-warning" type="button" v-bind:to="{ name: 'Update', params: { id: user.id }}">Modify</router-link></td>
             </tr>
         </tbody>
     </table>
