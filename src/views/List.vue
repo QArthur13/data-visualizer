@@ -1,4 +1,6 @@
 <template>
+
+    <input type="text" v-model="search" class="form-control" placeholder="Search">
     <table class="table table-bordered">
         <thead>
             <tr class="text-center" style="background-color: darkgreen; color:white">
@@ -21,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="user in list" :key="user.ID">
+            <tr v-for="user in filterList" :key="user.ID">
                 <th class="text-center" style="background-color: darkgreen; color:white">{{user.id}}</th>
                 <td>{{user.lastname}}</td>
                 <td>{{user.firstname}}</td>
@@ -49,9 +51,17 @@ export default {
     name: 'List',
     data() {
 
-        return{
-
-            list: []
+        return {
+            list: [],
+            search: ''
+        }
+        
+    },
+    computed: {
+        filterList(){
+            return this.list.filter(user => {
+                return user.lastname.toLowerCase().includes(this.search.toLowerCase())
+            })
         }
     },
     mounted() {
