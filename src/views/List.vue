@@ -1,16 +1,16 @@
 <template>
 
-    <input type="text" v-model="search" class="form-control" placeholder="Search">
+    <input type="text" v-model="search" class="form-control" placeholder="Search a LastName">
     <table class="table table-bordered">
         <thead>
             <tr class="text-center" style="background-color: darkgreen; color:white">
-                <th>ID</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Genre</th>
-                <th>Email</th>
+                <th v-on:click="sort('id')">ID</th>
+                <th v-on:click="sort('lastname')">Nom</th>
+                <th v-on:click="sort('firstname')">Prénom</th>
+                <th v-on:click="sort('gender')">Genre</th>
+                <th v-on:click="sort('contact.email')">Email</th>
                 <th>Adresse</th>
-                <th>Ville</th>
+                <th v-on:click="sort('contact.country')">Ville</th>
                 <th>Pays</th>
                 <th>Longitude</th>
                 <th>Lattitude</th>
@@ -53,7 +53,9 @@ export default {
 
         return {
             list: [],
-            search: ''
+            search: '',
+            default_sort_name: 'user.',
+            default_sort_direction: 'asc'
         }
         
     },
@@ -61,7 +63,38 @@ export default {
         filterList(){
             return this.list.filter(user => {
                 return user.lastname.toLowerCase().includes(this.search.toLowerCase())
+            }).sort((a, b) => {
+
+                let modifier = 1
+
+                if (this.default_sort_direction === 'desc') {
+                    
+                    modifier = -1
+                }
+
+                if (a[this.default_sort_name] < b[this.default_sort_name]) {
+                    
+                    return -1 * modifier 
+                }
+
+                if (a[this.default_sort_name] > b[this.default_sort_name]) {
+                    
+                    return 1 * modifier 
+                }
+
+                return 0
             })
+        }
+    },
+    methods:{
+        sort:function(sort) {
+
+            if (sort === this.default_sort_name) {
+
+                this.default_sort_direction = this.default_sort_direction === 'asc' ? 'desc' : 'asc'
+            }
+
+            this.default_sort_name = sort
         }
     },
     mounted() {
