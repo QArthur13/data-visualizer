@@ -8,9 +8,9 @@
                 <th v-on:click="sort('lastname')">Nom</th>
                 <th v-on:click="sort('firstname')">Prénom</th>
                 <th v-on:click="sort('gender')">Genre</th>
-                <th v-on:click="sort('contact.email')">Email</th>
-                <th>Adresse</th>
-                <th v-on:click="sort('contact.country')">Ville</th>
+                <th v-on:click="sort('email')">Email</th>
+                <th v-on:click="sort('address')">Adresse</th>
+                <th v-on:click="sort('country')">Ville</th>
                 <th>Pays</th>
                 <th>Longitude</th>
                 <th>Lattitude</th>
@@ -44,6 +44,9 @@
         </tbody>
     </table>
 
+    <button class="btn btn-info ms-2" v-on:click="previousPage">Previous</button>
+    <button class="btn btn-info ms-5" v-on:click="nextPage">Next</button>
+
 </template>
 
 <script>
@@ -54,8 +57,10 @@ export default {
         return {
             list: [],
             search: '',
-            default_sort_name: 'user.',
-            default_sort_direction: 'asc'
+            default_sort_name: 'user',
+            default_sort_direction: 'asc',
+            page_size: 10,
+            page_current: 1
         }
         
     },
@@ -83,6 +88,17 @@ export default {
                 }
 
                 return 0
+
+            }).filter((row, index) => {
+
+                let start = (this.page_current-1) * this.page_size
+
+                let end = this.page_current * this.page_size
+
+                if (index >= start && index <= end) {
+                    
+                    return true
+                }
             })
         }
     },
@@ -95,6 +111,20 @@ export default {
             }
 
             this.default_sort_name = sort
+        },
+        nextPage: function(){
+
+            if ((this.page_current * this.page_size) < this.list.length) {
+                
+                this.page_current++
+            }
+        },
+        previousPage: function() {
+            
+            if (this.page_current > 1) {
+                
+                this.page_current--
+            }
         }
     },
     mounted() {

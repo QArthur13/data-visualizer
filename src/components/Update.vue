@@ -5,7 +5,7 @@
 
         <div class="mb-3">
             <label for="lastname">Last name:</label>
-            <input type="text" class="form-control" id="lastname" name="lastname">{{user.lastname}}
+            <input type="text" class="form-control" id="lastname" value=user.lastname name="lastname">
         </div>
 
         <div class="mb-3">
