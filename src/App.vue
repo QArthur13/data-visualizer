@@ -32,9 +32,22 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 
 export default {
   name: 'App',
+
+  mounted() {
+        fetch("https://run.mocky.io/v3/70e5b0ad-7112-41c5-853e-b382a39e65b7")
+        .then(response => response.json())
+        .then(data => {
+            this.saveUsers(data.people);
+        })
+    },
+    methods:{
+      ...mapActions(['saveUsers'])
+    }
+    
   
 }
 </script>

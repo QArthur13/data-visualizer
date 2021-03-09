@@ -5,7 +5,7 @@ import Home from '../views/Home.vue'
 import PieAnimal from '../views/PieAnimal.vue'
 import PieFruit from '../views/PieFruit.vue'
 import PieColor from '../views/PieColor.vue'
-import Update from '../components/Update.vue'
+import Update from '../views/Update.vue'
 
 const routes = [
     {

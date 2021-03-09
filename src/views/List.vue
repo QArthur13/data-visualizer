@@ -8,9 +8,9 @@
                 <th v-on:click="sort('lastname')">Nom</th>
                 <th v-on:click="sort('firstname')">Prénom</th>
                 <th v-on:click="sort('gender')">Genre</th>
-                <th v-on:click="sort('email')">Email</th>
+                <th v-on:click="sort('user.contact.email')">Email</th>
                 <th v-on:click="sort('address')">Adresse</th>
-                <th v-on:click="sort('country')">Ville</th>
+                <th v-on:click="sort('contact.country')">Ville</th>
                 <th>Pays</th>
                 <th>Longitude</th>
                 <th>Lattitude</th>
@@ -39,7 +39,7 @@
                 <td>{{user.preferences.favorite_fruit}}</td>
                 <td>{{user.preferences.favorite_color}}</td>
                 <td>{{user.preferences.favorite_movie}}</td>
-                <td><router-link class="btn btn-warning" type="button" v-bind:to="{ name: 'Update', params: { id: user.id }}">Modify</router-link></td>
+                <td v-on:click="modifyUser(user)"><a class="btn btn-warning" type="button" >Modify</a></td>
             </tr>
         </tbody>
     </table>
@@ -50,14 +50,15 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
+
 export default {
     name: 'List',
     data() {
 
         return {
-            list: [],
             search: '',
-            default_sort_name: 'user',
+            default_sort_name: 'user.contact.email',
             default_sort_direction: 'asc',
             page_size: 10,
             page_current: 1
@@ -66,7 +67,7 @@ export default {
     },
     computed: {
         filterList(){
-            return this.list.filter(user => {
+            return this.userList.filter(user => {
                 return user.lastname.toLowerCase().includes(this.search.toLowerCase())
             }).sort((a, b) => {
 
@@ -100,7 +101,8 @@ export default {
                     return true
                 }
             })
-        }
+        },
+        ...mapState(['updateToUser', 'userList'])
     },
     methods:{
         sort:function(sort) {
@@ -125,14 +127,13 @@ export default {
                 
                 this.page_current--
             }
-        }
+        },
+        modifyUser(user){
+            this.$router.push({ name: 'Update', params: { id: user.id }})
+            this.setUserToUpdate(user)
+        },
+        ...mapActions(['setUserToUpdate'])
     },
-    mounted() {
-        fetch("https://run.mocky.io/v3/70e5b0ad-7112-41c5-853e-b382a39e65b7")
-        .then(response => response.json())
-        .then(data => {
-            this.list = data.people;
-        })
-    }
+    
 }
 </script>
