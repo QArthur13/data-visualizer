@@ -2,7 +2,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import List from '../views/List.vue'
 import Home from '../views/Home.vue'
-import Pie from '../views/Pie.vue'
+import PieAnimal from '../views/PieAnimal.vue'
+import PieFruit from '../views/PieFruit.vue'
+import PieColor from '../views/PieColor.vue'
 import Update from '../components/Update.vue'
 
 const routes = [
@@ -22,9 +24,19 @@ const routes = [
         component: Update
     },
     {
-        path: '/camembert',
-        name: 'Pie',
-        component: Pie
+        path: '/animal',
+        name: 'Animal',
+        component: PieAnimal
+    },
+    {
+        path: '/fruit',
+        name: 'Fruit',
+        component: PieFruit
+    },
+    {
+        path: '/color',
+        name: 'Color',
+        component: PieColor
     }
 ]
 

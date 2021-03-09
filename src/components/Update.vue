@@ -5,7 +5,7 @@
 
         <div class="mb-3">
             <label for="lastname">Last name:</label>
-            <input type="text" class="form-control" id="lastname" value=user.lastname name="lastname">
+            <input type="text" class="form-control" id="lastname" name="lastname">
         </div>
 
         <div class="mb-3">
@@ -13,19 +13,17 @@
             <input type="text" class="form-control" id="firstname" name="firstname">{{user.firstname}}
         </div>
 
-        <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" value="Female" id="gender" name="gender">
-            <label class="form-check-label" for="gender">
-                Female
-            </label>
-        </div>
+       <select class="form-select mb-3" aria-label="Default select example">
+            
+            <div v-if="gender == Male">
+                <option value="1" selected>Male</option>
+            </div>
 
-        <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" value="Male" id="gender" name="gender">
-            <label class="form-check-label" for="gender">
-                Male
-            </label>
-        </div>
+            <div v-else>
+                <option value="2" selected>Female</option>
+            </div>
+            
+        </select>
 
         <div class="mb-3">
             <label for="email">Email:</label>
@@ -83,7 +81,7 @@
         </div>
 
         <div class="mb-3">
-            <button class="btn btn-warning" type="submit" value="Submit"></button>
+            <button class="btn btn-warning" type="submit" value="Submit">Update :)</button>
         </div>
 
     </form>

@@ -17,25 +17,23 @@ export default {
         new Chart(document.getElementById('chart').getContext('2d'), {
             type:'pie',
             data: {
-                labels: ["Bouches-du-Rhone", "Var", "Alpes-Maritimes", "Alpes-de-Haute-Provence", "Vaucluse", "Hautes-Alpes"],
+                labels: ["Blue", "Green", "Orange", "Red", "Yellow"],
                 datasets: [{
-                    label: "PACA",
-                    data: [2030360, 1070700, 1090220, 160070, 560790, 140700],
+                    label: "Favorite Color",
+                    data: [21, 23, 14, 15, 16],
                     borderColor: [
-                        'rgb(0, 0, 139)',
                         'rgb(0, 0, 255)',
-                        'rgb(173, 216, 230)',
-                        'rgb(165, 42, 42)',
-                        'rgb(230, 230, 250)',
-                        'rgb(139, 69, 19)'
+                        'rgb(0, 255, 0)',
+                        'rgb(255, 165, 0)',
+                        'rgb(255, 0, 0)',
+                        'rgb(255, 255, 0)'
                     ],
                     backgroundColor: [
-                        'rgb(0, 0, 139)',
                         'rgb(0, 0, 255)',
-                        'rgb(173, 216, 230)',
-                        'rgb(165, 42, 42)',
-                        'rgb(230, 230, 250)',
-                        'rgb(139, 69, 19)'
+                        'rgb(0, 255, 0)',
+                        'rgb(255, 165, 0)',
+                        'rgb(255, 0, 0)',
+                        'rgb(255, 255, 0)'
                     ],
                     borderWidth: 1
                 }],
