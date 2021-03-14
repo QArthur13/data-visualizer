@@ -6,6 +6,9 @@
 </template>
 
 <script>
+/**
+ * Les PieChartAnimal, Color et Fruit permet de mettre un cammembert et de récupérer les données dans les components de chaque Pie.
+ */
 import PieChartAnimal from '../components/PieChartAnimal.vue'
 
 export default {

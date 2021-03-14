@@ -23,6 +23,9 @@
             <li class="nav-item">
               <router-link v-bind:to="{ name: 'Color' }" class="nav-link active">Pie Color</router-link>
             </li>
+            <li class="nav-item">
+              <router-link v-bind:to="{ name: 'Bar' }" class="nav-link active">Bar Chart</router-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -32,6 +35,9 @@
 </template>
 
 <script>
+/**
+ * App.vue est la page principal et ce qui permet de pouvoir faire marcher le projet.
+ */
 import { mapActions } from 'vuex';
 
 export default {

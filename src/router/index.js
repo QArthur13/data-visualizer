@@ -6,6 +6,7 @@ import PieAnimal from '../views/PieAnimal.vue'
 import PieFruit from '../views/PieFruit.vue'
 import PieColor from '../views/PieColor.vue'
 import Update from '../views/Update.vue'
+import Bar from '../views/Bar.vue'
 
 const routes = [
     {
@@ -37,6 +38,11 @@ const routes = [
         path: '/color',
         name: 'Color',
         component: PieColor
+    },
+    {
+        path: '/bar',
+        name: 'Bar',
+        component: Bar
     }
 ]
 

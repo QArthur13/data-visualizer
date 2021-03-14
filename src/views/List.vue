@@ -44,12 +44,15 @@
         </tbody>
     </table>
 
-    <button class="btn btn-info ms-2" v-on:click="previousPage">Previous</button>
-    <button class="btn btn-info ms-5" v-on:click="nextPage">Next</button>
+    <!-- <button class="btn btn-info ms-2" v-on:click="previousPage">Previous</button>
+    <button class="btn btn-info ms-5" v-on:click="nextPage">Next</button> -->
 
 </template>
 
 <script>
+/**
+ * La liste des données de l'api.
+ */
 import { mapActions, mapState } from 'vuex'
 
 export default {
@@ -58,7 +61,7 @@ export default {
 
         return {
             search: '',
-            default_sort_name: 'user.contact.email',
+            default_sort_name: 'lastname',
             default_sort_direction: 'asc',
             page_size: 10,
             page_current: 1
@@ -66,23 +69,39 @@ export default {
         
     },
     computed: {
+        /**
+         * filterList permet de rechercher un nom d'une personne, ainsi que le trie et la pagination.
+         */
         filterList(){
             return this.userList.filter(user => {
                 return user.lastname.toLowerCase().includes(this.search.toLowerCase())
             }).sort((a, b) => {
 
+                /**
+                 * Notre variable qui permet de faire par ordre croissant et décroissant.
+                 */
                 let modifier = 1
 
+                /**
+                 * On teste si notre direction est appeller par ordre décroissant.
+                 */
                 if (this.default_sort_direction === 'desc') {
                     
+                    //Si c'est vrai alors on part par ordre décroissant.
                     modifier = -1
                 }
 
+                /**
+                 * Si l'une des tables est inférieur à celle de sont autre tables, alors on part en décroissant.
+                 */
                 if (a[this.default_sort_name] < b[this.default_sort_name]) {
                     
                     return -1 * modifier 
                 }
 
+                /**
+                 * Sinon on repart on ordre croissant.
+                 */
                 if (a[this.default_sort_name] > b[this.default_sort_name]) {
                     
                     return 1 * modifier 
@@ -90,7 +109,7 @@ export default {
 
                 return 0
 
-            }).filter((row, index) => {
+            })/* .filter((row, index) => {
 
                 let start = (this.page_current-1) * this.page_size
 
@@ -100,7 +119,7 @@ export default {
                     
                     return true
                 }
-            })
+            }) */
         },
         ...mapState(['updateToUser', 'userList'])
     },
@@ -116,7 +135,7 @@ export default {
         },
         nextPage: function(){
 
-            if ((this.page_current * this.page_size) < this.list.length) {
+            if ((this.page_current * this.page_size) < this.user.length) {
                 
                 this.page_current++
             }

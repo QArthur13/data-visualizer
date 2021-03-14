@@ -20,7 +20,7 @@ export default {
                 labels: ["Blue", "Green", "Orange", "Red", "Yellow"],
                 datasets: [{
                     label: "Favorite Color",
-                    data: [21, 23, 14, 15, 16],
+                    data: [20, 21, 15, 14, 15],
                     borderColor: [
                         'rgb(0, 0, 255)',
                         'rgb(0, 255, 0)',

@@ -82,6 +82,11 @@
 </template>
 
 <script>
+/**
+ * Mets à jour les données d'une colonne.
+ * 
+ * On fait aussi appelle à Vuex, pour pouvoir mieux sauvegarder et changer les données.
+ */
 import { mapActions, mapState } from 'vuex'
 
 export default {

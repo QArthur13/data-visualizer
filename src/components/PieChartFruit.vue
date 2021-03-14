@@ -20,7 +20,7 @@ export default {
                 labels: ["Apple", "Mango", "Orange", "Pear", "Pineapple", "Strawberry"],
                 datasets: [{
                     label: "Favorite Fruit",
-                    data: [18, 25, 22, 10, 20, 11],
+                    data: [17, 23, 22, 10, 19, 11],
                     borderColor: [
                         'rgb(173, 255, 47)',
                         'rgb(255, 215, 0)',

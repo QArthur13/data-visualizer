@@ -20,7 +20,7 @@ export default {
                 labels: ["Bird", "Cat", "Dog", "Rat"],
                 datasets: [{
                     label: "Favorite Animals",
-                    data: [29, 30, 25, 24],
+                    data: [27, 28, 23, 22],
                     borderColor: [
                         'rgb(0, 0, 255)',
                         'rgb(0, 255, 255)',
