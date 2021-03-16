@@ -1,25 +1,25 @@
 <template>
 
     <input type="text" v-model="search" class="form-control" placeholder="Search a LastName">
-    <table class="table table-bordered">
+    <table class="table table-bordered table-sm">
         <thead>
             <tr class="text-center" style="background-color: darkgreen; color:white">
                 <th v-on:click="sort('id')">ID</th>
-                <th v-on:click="sort('lastname')">Nom</th>
-                <th v-on:click="sort('firstname')">Prénom</th>
-                <th v-on:click="sort('gender')">Genre</th>
+                <th v-on:click="sort('lastname')">LastName</th>
+                <th v-on:click="sort('firstname')">FirstName</th>
+                <th v-on:click="sort('gender')">Gender</th>
                 <th v-on:click="sort('user.contact.email')">Email</th>
-                <th v-on:click="sort('address')">Adresse</th>
-                <th v-on:click="sort('contact.country')">Ville</th>
-                <th>Pays</th>
+                <th v-on:click="sort('address')">Address</th>
+                <th v-on:click="sort('contact.city')">City</th>
+                <th>Country</th>
                 <th>Longitude</th>
                 <th>Lattitude</th>
-                <th>Téléphone</th>
-                <th>Animal Préférer</th>
-                <th>Fruit Préférer</th>
-                <th>Couleur Préférer</th>
-                <th>Film Préférer</th>
-                <th>Modifier</th>
+                <th>Phone</th>
+                <th>Favorite Animal</th>
+                <th>Favorite Fruit</th>
+                <th>Favorite Coulor</th>
+                <th>Favorite Movie</th>
+                <th>Modify</th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +39,7 @@
                 <td>{{user.preferences.favorite_fruit}}</td>
                 <td>{{user.preferences.favorite_color}}</td>
                 <td>{{user.preferences.favorite_movie}}</td>
-                <td v-on:click="modifyUser(user)"><a class="btn btn-warning" type="button" >Modify</a></td>
+                <td v-on:click="modifyUser(user)"><a class="btn btn-success" type="button" >Modify</a></td>
             </tr>
         </tbody>
     </table>
