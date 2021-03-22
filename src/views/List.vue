@@ -5,22 +5,6 @@
         <thead>
             <tr class="text-center" style="background-color: darkgreen; color:white">
                 <th v-on:click="sort('id')">ID</th>
-<<<<<<< HEAD
-                <th v-on:click="sort('lastname')">LastName</th>
-                <th v-on:click="sort('firstname')">FirstName</th>
-                <th v-on:click="sort('gender')">Gender</th>
-                <th v-on:click="sort('user.contact.email')">Email</th>
-                <th v-on:click="sort('address')">Address</th>
-                <th v-on:click="sort('contact.city')">City</th>
-                <th>Country</th>
-                <th>Longitude</th>
-                <th>Lattitude</th>
-                <th>Phone</th>
-                <th>Favorite Animal</th>
-                <th>Favorite Fruit</th>
-                <th>Favorite Coulor</th>
-                <th>Favorite Movie</th>
-=======
                 <th v-on:click="sort('lastname')">Last name</th>
                 <th v-on:click="sort('firstname')">First name</th>
                 <th v-on:click="sort('gender')">Gender</th>
@@ -35,7 +19,6 @@
                 <th v-on:click="sort('preferences.favorite_fruit')">Favorite Fruit</th>
                 <th v-on:click="sort('preferences.favorite_color')">Favorite Color</th>
                 <th v-on:click="sort('preferences.favorite_movie')">Favorite Movie</th>
->>>>>>> test-json
                 <th>Modify</th>
             </tr>
         </thead>
