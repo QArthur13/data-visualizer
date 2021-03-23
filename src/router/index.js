@@ -7,6 +7,7 @@ import PieFruit from '../views/PieFruit.vue'
 import PieColor from '../views/PieColor.vue'
 import Update from '../views/Update.vue'
 import Bar from '../views/Bar.vue'
+import Maps from '../views/Maps.vue'
 
 const routes = [
     {
@@ -43,6 +44,11 @@ const routes = [
         path: '/bar',
         name: 'Bar',
         component: Bar
+    },
+    {
+        path: '/maps',
+        name: 'Maps',
+        component: Maps
     }
 ]
 
