@@ -18,19 +18,45 @@ export default {
             type:'pie',
             data: {
                 labels: [
-                    "Antilles", "Central Africa", "Central America", "Eastern Europe", 
-                    "East Asia", "North Africa", "North America" ,"North Asia", 
-                    "Northern Europe", "Western Asia", "Western Europe", "South America",
-                    "South Asia", "Southeast Asia", "Southern Africa", "Southern Europe"
+                    "Argentina", "Bolivia", "Botswana", "Brazil", 
+                    "Chile", "China", "Colombia" ,"Costa Rica", 
+                    "Croatia", "Cyprus", "Czech Republic", "Egypt",
+                    "Finland", "France", "Georgia", "Germany",
+                    "Greece", "Indonesia", "Ireland", "Italy",
+                    "Jamaica", "Japan", "Latvia", "Lithuania",
+                    "Mexico", "Pakistan", "Peru", "Philippines",
+                    "Poland", "Republic of the Congo", "Russia",
+                    "South Africa", "South Korea", "Suriname",
+                    "Sweden", "Syria", "Thailand", "Ukraine",
+                    "United Kingdom", "United States", "Venezuela"
                     ],
                 datasets: [{
                     label: "List of people where they lives",
-                    data: [27, 28, 23, 22],
+                    data: [
+                        1, 1, 1, 1,
+                        3, 19, 1, 1,
+                        1, 1, 2, 3,
+                        1, 3, 2, 1,
+                        1, 10, 1, 1,
+                        2, 1, 1, 1,
+                        4, 1, 5, 5,
+                        7, 1, 6,
+                        1, 1, 1,
+                        2, 2, 5, 1,
+                        2, 4, 4
+                        ],
                     borderColor: [
-                        'rgb(0, 0, 255)',
-                        'rgb(0, 255, 255)',
-                        'rgb(0, 100, 0)',
-                        'rgb(255, 0, 0)'
+                        'rgb(135, 206, 235)', 'rgb(255, 0, 0)', 'rgb(135, 206, 235)', 'rgb(0, 255, 0)', 
+                        'rgb(255, 0, 0)', 'rgb(255, 0, 0)', 'rgb(255, 215, 0)' ,'rgb(255, 0, 0)', 
+                        'rgb(255, 0, 0)', 'rgb(255, 215, 0)', 'rgb(0, 0, 255)', 'rgb(0, 0, 0)',
+                        'rgb(0, 0, 255)', 'rgb(0, 0, 255)', 'rgb(255, 0, 0)', 'rgb(0, 0, 0)',
+                        'rgb(70, 130, 180)', 'rgb(255, 0, 0)', 'rgb(0, 0, 255)', 'rgb(0, 0, 255)',
+                        'rgb(0, 0, 255)', 'rgb(0, 0, 255)', 'rgb(0, 0, 255)', 'rgb(0, 0, 255)',
+                        'rgb(0, 0, 255)', 'rgb(0, 0, 255)', 'rgb(0, 0, 255)', 'rgb(0, 0, 255)',
+                        'rgb(0, 0, 255)', 'rgb(0, 0, 255)', 'rgb(0, 0, 255)',
+                        'rgb(0, 0, 255)', 'rgb(0, 0, 255)', 'rgb(0, 0, 255)',
+                        'rgb(0, 0, 255)', 'rgb(0, 0, 255)', 'rgb(0, 0, 255)', 'rgb(0, 0, 255)',
+                        'rgb(0, 0, 255)', 'rgb(0, 0, 255)', 'rgb(0, 0, 255)'
                     ],
                     backgroundColor: [
                         'rgb(0, 0, 255)',
