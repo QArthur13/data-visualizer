@@ -26,6 +26,9 @@
             <li class="nav-item">
               <router-link v-bind:to="{ name: 'Bar' }" class="nav-link active">Bar Chart</router-link>
             </li>
+            <li class="nav-item">
+              <router-link v-bind:to="{ name: 'Maps' }" class="nav-link active">World Maps</router-link>
+            </li>
           </ul>
         </div>
       </div>
