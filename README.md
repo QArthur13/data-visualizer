@@ -7,4 +7,4 @@ Pour Installer le projet il faut faire:
 
 Et le projet sera fonctionnelle, pour le faire marché faite "npm run serve".
 
-QArthur13/Projet-NodeJS-B3
+Fin B3 read-only
